@@ -1,16 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { MongoClient } = require("mongodb");
+const ObjectID = require("mongodb").ObjectId;
 const cors = require("cors");
-const fileUpload = require("express-fileupload");
-const ObjectID = require('mongodb').ObjectID;
 require("dotenv").config();
 
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(fileUpload());
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
@@ -49,7 +47,7 @@ app.get("/allMeme", (req, res) => {
               });
 
 
-              
+
               console.log("Successfully Running")   
     });
 
